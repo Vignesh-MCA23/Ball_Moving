@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="ball2" style="
+    background-color:blue;
+    border-radius:50%;
+    height:100px;
+    width:100px;
+    position:absolute;
+    top:50px;
+    left:50px;"></div>
+    <script>
+        var ball=document.getElementById("ball2");//fetching the id from html 
+        var v1=200;//space given for x
+        var v2=200;//5rspace given for y
+        var x1=0;//starting point of x
+        var y1=0;//starting point of y
+        var x2=1000;//ending point of x
+        var y2=1000;//ending point of y
+        let p1=x1;//declaring position for x
+        let p2=y1;//declaring position for y
+        let dir_1=1;//declaring direction for x
+        let dir_2=1;////declaring direction for y
+    
+        
+        function move(){
+            p1=p1+v1*dir_1;
+            p2=p2+v2*dir_2;
+
+            if (p1>= x2 || p1<= x1) {
+
+                     dir_1*= -1; // Change direction to move back towards the start point
+              console.log(p1,"position");
+                    }
+           
+            if (p2 >= y2 || p2 <= y1) {
+
+                  dir_2*= -1;// Change direction to move back towards the start point
+               
+                }
+    
+        
+
+            ball.style.left=p1+"px";
+            ball.style.top=p2+"px";
+        }
+       setInterval(move,1000)
+    </script>
+</body>
+</html>
